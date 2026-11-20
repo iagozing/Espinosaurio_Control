@@ -390,33 +390,97 @@ header {
   </style>
 </head>
 <body>
-  <main class="app">
-    <header>
+ <main class="app">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">🦖</div>
       <div>
-        <div class="brand">SPINOSAURUS CONTROL</div>
-        <div class="sub">ROBOTIC INTERFACE · BLE EDITION</div>
+        <h1>SPINOSAURUS.EXE</h1>
+        <p>UNOFFICIAL ROBOTICS PROJECT // BUILD 01</p>
       </div>
-      <div id="bleStatus" class="status">DESCONECTADO</div>
-    </header>
+    </div>
 
-    <section class="viewer" aria-label="Modelo 3D interactivo">
-      <div id="scene"></div>
-      <button id="headHotspot" class="hotspot" aria-label="Control de cabeza" title="Cabeza">⌁</button>
-      <button id="jawHotspot" class="hotspot" aria-label="Control de mandíbula" title="Mandíbula">＋</button>
-      <div class="model-label">SPINOSAURUS AEGYPTIACUS · 3D</div>
-    </section>
-    <p class="hint">Seleccioná un punto del dinosaurio para abrir sus controles.</p>
+    <div class="top-info">
+      <span>PROJECT: SPN-001</span>
+      <span>MODE: EXPERIMENTAL</span>
+      <span>REV: 0.3.7</span>
+    </div>
+  </header>
 
-    <button id="connectBtn" class="connect">CONECTAR POR BLUETOOTH</button>
+  <section class="viewer panel">
+    <div class="viewer-label">
+      <span>CAM_01 // LIVE MODEL VIEW</span>
+      <span>RENDER MODE: 3D / INTERACTIVE</span>
+    </div>
 
-    <section class="panel">
-      <div class="panel-title">ESTADO DEL SISTEMA</div>
-      <div class="row"><span>Conexión</span><strong id="connectionText">Sin conexión</strong></div>
-      <div class="row"><span>Última orden</span><strong id="lastCommand">Ninguna</strong></div>
-      <div class="row"><span>Modelo</span><strong>Spinosaurus · GLB</strong></div>
-    </section>
-    <div class="foot">La conexión BLE requiere un navegador compatible y una página servida mediante HTTPS.<br>El modelo 3D se carga desde el archivo spinosaurus.glb.</div>
-  </main>
+    <div id="scene"></div>
+
+    <div class="model-name">
+      <strong>SPINOSAURUS AEGYPTIACUS</strong>
+      <small>3D MODEL // INTERACTIVE VIEWPORT</small>
+    </div>
+
+    <button id="headHotspot" class="hotspot head-hotspot">HEAD</button>
+    <button id="jawHotspot" class="hotspot jaw-hotspot">JAW</button>
+  </section>
+
+  <section class="dashboard">
+    <div class="panel">
+      <h2>[01] SYSTEM STATUS</h2>
+
+      <div class="status">
+        <span id="bleStatus" class="status-dot"></span>
+        <span id="connectionText">DISCONNECTED</span>
+      </div>
+
+      <button id="connectBtn" class="connect">
+        CONNECT TO SPINOSAURUS
+      </button>
+
+      <p>LAST COMMAND: <span id="lastCommand">NONE</span></p>
+    </div>
+
+    <div class="panel">
+      <h2>[02] HARDWARE</h2>
+
+      <div class="row">
+        <span>HEAD SERVO</span>
+        <span>GPIO 26</span>
+      </div>
+
+      <div class="row">
+        <span>JAW SERVO</span>
+        <span>GPIO 27</span>
+      </div>
+
+      <div class="row">
+        <span>COMMUNICATION</span>
+        <span>BLE</span>
+      </div>
+
+      <div class="row">
+        <span>CONTROLLER</span>
+        <span>ESP32</span>
+      </div>
+    </div>
+
+    <div class="panel notes">
+      <h2>[03] DEVELOPER NOTES // NOT FINISHED</h2>
+
+      <p class="ok">[OK] 3D MODEL IMPORTED</p>
+      <p class="ok">[OK] BLE COMMUNICATION</p>
+      <p class="ok">[OK] HEAD SERVO CONTROL</p>
+      <p class="todo">[TODO] JAW SERVO TESTING</p>
+      <p class="todo">[TODO] MORE MOVEMENTS</p>
+      <p class="todo">[TODO] STOP BREAKING THINGS</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>MADE IN A SCHOOL WORKSHOP</span>
+    <span>IF IT WORKS, DON'T TOUCH IT. // BUILD 01</span>
+  </footer>
+</main>
 
   <div id="menuBackdrop" class="modal-backdrop">
     <section class="menu" role="dialog" aria-modal="true">
